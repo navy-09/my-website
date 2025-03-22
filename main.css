@@ -1,5 +1,32 @@
-html, body{
-    background-image: linear-gradient(#799BAD, #f4f4f4);
-    background-size: cover;
+body {
+    margin: 0;
+    padding: 0;
+    background-image: linear-gradient(to bottom, #799BAD, #F4F4F4);
+    min-height: 100vh;
+}
+
+
+h1, p {
+    position: relative;
+}
+
+.texture-overlay {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
     height: 100%;
+    background-image: url('media/grainoverlay.png');
+    background-repeat: repeat;
+    background-size: auto;
+    opacity: 0.6;
+    pointer-events: none;
+    z-index: -1;
+}
+
+.menu-icon {
+    width: 5vw;
+    height: 5vw;
+    padding: 25px;
+    padding-top: 25px;
 }
