@@ -1,3 +1,18 @@
+@font-face {
+    font-family: 'glacial-indifference';
+    src: url('fonts/GlacialIndifference-Regular.otf');
+}
+
+@font-face {
+    font-family: 'glacial-indifference-bold';
+    src: url('fonts/GlacialIndifference-Bold.otf');
+}
+
+@font-face {
+    font-family: 'tan-pearl';
+    src: url('fonts/tan-pearl.otf');
+}
+
 body {
     margin: 0;
     padding: 0;
@@ -6,9 +21,19 @@ body {
 }
 
 
-h1, p {
+h1 {
     position: relative;
+    font-family: 'glacial-indifference';
+    color: #f4f4f4;
+    text-align: center;
 }
+
+p {
+    position: relative;
+    font-family: 'glacial-indifference';
+    color: #f4f4f4;
+}
+
 
 .texture-overlay {
     position: fixed;
