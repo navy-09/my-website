@@ -10,8 +10,16 @@
 <body>
     <div class="texture-overlay"></div>
     <div class="menu-icon">
-        <img src="media/menuicon.svg" alt="Menu Icon">
+        <img src="media/menuicon.png" alt="Menu Icon">
     </div>
-    <h1></h1>
+    <div class="flower-icon">
+        <img src="media/flower.png" alt="Flower Icon">
+    </div>
+    <script>
+        const flowerIcon = document.querySelector('.flower-icon');
+        flowerIcon.addEventListener('click', () => {
+            flowerIcon.classList.toggle('spinning');
+        })
+    </script>
 </body>
 </html>
