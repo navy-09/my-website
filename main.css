@@ -69,7 +69,13 @@ h1, p {
     .flower-icon {
         top: 0;
         right: 0;
-        width: 10vw;
-        height: 10vw;
+        width: 8vw;
+        height: 8vw;
+    }
+    .menu-icon {
+        top: 0;
+        left: 0;
+        width: 8vw;
+        height: 8vw;
     }
 }
