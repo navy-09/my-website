@@ -74,6 +74,10 @@ h1#typing-text:hover {
     color: #0B3948;
 }
 
+.nav ul li a.active {
+    color: #0B3948; /* This will be the hover color */
+  }
+
 p {
     position: relative;
     font-family: 'glacial-indifference';

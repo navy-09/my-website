@@ -26,7 +26,7 @@
     <!--Nav Bar-->
     <div class="nav">
         <ul>
-            <li><a href="">Home</a></li>
+            <li><a href="index.html">Home</a></li>
             <li><a href="">Projects</a></li>
             <li><a href="">Contact</a></li>
             <li><a href="">About</a></li>
@@ -51,6 +51,17 @@
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
+        const navLinks = document.querySelectorAll('.nav ul li a');
+        const currentPage = window.location.pathname.split('/').pop(); // Get the current page filename
+
+        navLinks.forEach(link => {
+            const linkPath = link.getAttribute('href').split('/').pop();
+
+            if (linkPath === currentPage || (currentPage === '' && linkPath === '')) {
+            link.classList.add('active');
+            }
+        });
+
         const starIcon = document.querySelector('.star-icon');
         const starImg = starIcon.querySelector('img');
         const lightStarSrc = 'media/star-light.png';
@@ -67,7 +78,7 @@
         starIcon.addEventListener('click', () => {
             starIcon.classList.toggle('spinning');
         });
-    });
+        });
     </script>
 </body>
 </html>
