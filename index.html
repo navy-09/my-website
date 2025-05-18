@@ -26,45 +26,51 @@
         })
         
         document.addEventListener('DOMContentLoaded', function() {
-        const typingTextElement = document.getElementById('typing-text');
-
-        function updateTypingAnimation() {
+          const typingTextElement = document.getElementById('typing-text');
+        
+          function updateTypingAnimation() {
             typingTextElement.style.width = 'auto';
             const textWidth = typingTextElement.offsetWidth;
             typingTextElement.style.width = 'fit-content';
-
-            // Find the main.css stylesheet
+        
             let mainStylesheet;
             for (let i = 0; i < document.styleSheets.length; i++) {
-            if (document.styleSheets[i].href && document.styleSheets[i].href.includes('main.css')) {
+              if (document.styleSheets[i].href && document.styleSheets[i].href.includes('main.css')) {
                 mainStylesheet = document.styleSheets[i];
                 break;
+              }
             }
-            }
-
+        
             if (mainStylesheet) {
-            let typingRule;
-            for (let i = 0; i < mainStylesheet.cssRules.length; i++) {
-                if (mainStylesheet.cssRules[i].name === 'typing') {
-                typingRule = mainStylesheet.cssRules[i];
-                break;
+              let typingRule;
+              for (let i = 0; i < mainStylesheet.cssRules.length; i++) {
+                if (mainStylesheet.cssRules[i].type === CSSRule.KEYFRAMES_RULE && mainStylesheet.cssRules[i].name === 'typing') {
+                  typingRule = mainStylesheet.cssRules[i];
+                  break;
                 }
-            }
-
-            if (typingRule) {
-                typingRule.deleteRule('to');
+              }
+        
+              if (typingRule) {
+                // Find and delete the existing 'to' rule within the keyframes
+                for (let i = 0; i < typingRule.cssRules.length; i++) {
+                  if (typingRule.cssRules[i].keyText === 'to') {
+                    typingRule.deleteRule('to');
+                    break;
+                  }
+                }
+                // Insert the new 'to' rule
                 typingRule.insertRule(`to { width: ${textWidth}px }`);
-            } else {
+              } else {
                 console.error("Could not find the '@keyframes typing' rule in main.css");
-            }
+              }
             } else {
-            console.error("Could not find the main.css stylesheet");
+              console.error("Could not find the main.css stylesheet");
             }
-        }
-
-        updateTypingAnimation();
-        window.addEventListener('resize', updateTypingAnimation);
-        });
+          }
+        
+          updateTypingAnimation();
+          window.addEventListener('resize', updateTypingAnimation);
+});
 
 </script>
 </body>
