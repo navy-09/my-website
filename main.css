@@ -222,3 +222,55 @@ p {
       opacity: 0.8;
     }
   }
+
+  .fireflies {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none;
+    z-index: 998;
+  }
+  
+  .fireflies li {
+    position: absolute;
+    display: block;
+    width: 3px;
+    height: 3px;
+    border-radius: 50%;
+    background-color: white;
+    box-shadow: 0 0 3px 1px rgba(255, 255, 255, 0.8);
+    opacity: 0;
+    animation: float-in 15s linear infinite,
+               organic-drift 20s ease-in-out infinite alternate; /* Organic drift animation */
+  }
+  
+  /* Individual delays */
+  .fireflies li:nth-child(1) { animation-delay: 0.5s, 1s; top: 10vh; left: 10vw; }
+  .fireflies li:nth-child(2) { animation-delay: 1.5s, 3s; top: 30vh; left: 80vw; }
+  .fireflies li:nth-child(3) { animation-delay: 2.5s, 5s; top: 50vh; left: 20vw; }
+  .fireflies li:nth-child(4) { animation-delay: 3.5s, 7s; top: 70vh; left: 60vw; }
+  .fireflies li:nth-child(5) { animation-delay: 4.5s, 9s; top: 90vh; left: 40vw; }
+  .fireflies li:nth-child(6) { animation-delay: 5.5s, 11s; top: 20vh; left: 50vw; }
+  .fireflies li:nth-child(7) { animation-delay: 6.5s, 13s; top: 60vh; left: 90vw; }
+  .fireflies li:nth-child(8) { animation-delay: 7.5s, 15s; top: 40vh; left: 5vw; }
+  .fireflies li:nth-child(9) { animation-delay: 8.5s, 17s; top: 80vh; left: 70vw; }
+  .fireflies li:nth-child(10) { animation-delay: 9.5s, 19s; top: 5vh; left: 30vw; }
+  .fireflies li:nth-child(11) { animation-delay: 10.5s, 21s; top: 75vh; left: 15vw; }
+  
+  @keyframes float-in {
+    0% { opacity: 0; transform: scale(0.5); }
+    10% { opacity: 1; transform: scale(1); }
+    90% { opacity: 1; transform: scale(1); }
+    100% { opacity: 0; transform: scale(0.5); }
+  }
+  
+  @keyframes organic-drift {
+    0% { transform: translate(0, 0) scale(1); }
+    25% { transform: translate(10vw, 5vh) scale(1.1); }
+    50% { transform: translate(-5vw, 15vh) scale(0.9); }
+    75% { transform: translate(5vw, -10vh) scale(1.05); }
+    100% { transform: translate(0, 0) scale(1); }
+  }
