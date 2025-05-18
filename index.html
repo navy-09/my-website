@@ -9,63 +9,50 @@
 </head>
 <body>
     <div class="texture-overlay"></div>
-    <div class="menu-icon">
-        <img src="media/menuicon.png" alt="Menu Icon">
-    </div>
-    <div class="flower-icon">
-        <img src="media/flower.png" alt="Flower Icon">
+<!--Nav Bar-->
+<div class="nav">
+    <ul>
+        <li><a href="">Home</a></li>
+        <li><a href="">Projects</a></li>
+        <li><a href="">Contact</a></li>
+        <li><a href="">About</a></li>
+    </ul>
+</div>
+    <div class="star-icon">
+        <img src="media/star-light.png" alt="star Icon">
     </div>
     <div class="typewriter" style="padding-top:10vw;">
         <h1 id="typing-text">Software Development</h1>
-      </div>
+    </div>
+
+    <div class="middle-left-flowers">
+        <img src="media/flowers.png" alt="Flowers Image">
+    </div>
+
+    <div class="floating-birds">
+        <img src="media/birds.png" alt="Birds">
+    </div>
+
 
     <script>
-        const flowerIcon = document.querySelector('.flower-icon');
-        flowerIcon.addEventListener('click', () => {
-            flowerIcon.classList.toggle('spinning');
-        })
-        
         document.addEventListener('DOMContentLoaded', function() {
-        const typingTextElement = document.getElementById('typing-text');
+        const starIcon = document.querySelector('.star-icon');
+        const starImg = starIcon.querySelector('img');
+        const lightStarSrc = 'media/star-light.png';
+        const darkStarSrc = 'media/star-dark.png';
 
-        function updateTypingAnimation() {
-            typingTextElement.style.width = 'auto';
-            const textWidth = typingTextElement.offsetWidth;
-            typingTextElement.style.width = 'fit-content';
-
-            // Find the main.css stylesheet
-            let mainStylesheet;
-            for (let i = 0; i < document.styleSheets.length; i++) {
-            if (document.styleSheets[i].href && document.styleSheets[i].href.includes('main.css')) {
-                mainStylesheet = document.styleSheets[i];
-                break;
-            }
-            }
-
-            if (mainStylesheet) {
-            let typingRule;
-            for (let i = 0; i < mainStylesheet.cssRules.length; i++) {
-                if (mainStylesheet.cssRules[i].name === 'typing') {
-                typingRule = mainStylesheet.cssRules[i];
-                break;
-                }
-            }
-
-            if (typingRule) {
-                typingRule.deleteRule('to');
-                typingRule.insertRule(`to { width: ${textWidth}px }`);
-            } else {
-                console.error("Could not find the '@keyframes typing' rule in main.css");
-            }
-            } else {
-            console.error("Could not find the main.css stylesheet");
-            }
-        }
-
-        updateTypingAnimation();
-        window.addEventListener('resize', updateTypingAnimation);
+        starIcon.addEventListener('mouseover', () => {
+            starImg.src = darkStarSrc;
         });
 
-</script>
+        starIcon.addEventListener('mouseout', () => {
+            starImg.src = lightStarSrc;
+        });
+
+        starIcon.addEventListener('click', () => {
+            starIcon.classList.toggle('spinning');
+        });
+    });
+    </script>
 </body>
 </html>

@@ -25,32 +25,6 @@
     src: url('fonts/Quicksand-SemiBold.ttf');
 }
 
-
-.typewriter h1 {
-    color: #fff;
-    font-family: quicksand-light;
-    overflow: hidden;
-    border-right: .05em solid #f4f4f4;
-    white-space: nowrap;
-    margin: 0 auto;
-    letter-spacing: .15em;
-    font-size: 3vw; /* Your responsive font size */
-    width: fit-content; /* Important */
-    animation:
-      typing 3.5s steps(60, end) forwards,
-      blink-caret .75s step-end infinite;
-  }
-
-  @keyframes typing {
-    from { width: 0 }
-    to { width: 100% } /* We'll override this with JS */
-  }
-
-  @keyframes blink-caret {
-    from, to { border-color: transparent }
-    50% { border-color: #f4f4f4 }
-  }
-
 body {
     margin: 0;
     padding: 0;
@@ -59,12 +33,45 @@ body {
 }
 
 
-h1 {
+h1#typing-text {
+    position: relative;
+    font-family: 'quicksand-light';
+    color: #f4f4f4; 
+    text-align: center;
+    font-size: 3vw;
+    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out; 
+    text-shadow: 2px 2px 4px transparent; 
+}
+
+h1#typing-text:hover {    
+    text-shadow: 2px 2px 4px #0B3948; 
+}
+
+.nav ul {
     position: relative;
     font-family: 'quicksand-light';
     color: #f4f4f4;
-    text-align: center;
-    font-size: 3vw;
+    text-align: left;
+    font-size: 1.5vw;
+    padding: 1%;
+    padding-top: 0.5%;
+    list-style-type: none;
+    margin: 0;
+}
+
+.nav ul li {
+    display: inline; /* Or display: inline-block; */
+    padding-right: 1vw; /* Add some spacing between items */
+}
+
+.nav ul li a {
+    text-decoration: none; /* Remove the underline */
+    color: inherit;
+}
+
+.nav ul li a:hover {
+    text-decoration: none; /* Remove the underline */
+    color: #0B3948;
 }
 
 p {
@@ -104,12 +111,12 @@ p {
 }
 
 
-/* flower icon animation on click*/
-.flower-icon {
+/* star icon animation on click*/
+.star-icon {
     position: fixed;
     top: 0;
     right: 0;
-    padding: 10px;
+    padding: 1%;
     cursor: pointer;
     width: 2vw;
     height: 2vw;
@@ -117,13 +124,13 @@ p {
     float: right;
 }
 
-.flower-icon img {
+.star-icon img {
     width: 100%;
     height: 100%;
     transform-origin: center;
 }
 
-.flower-icon.spinning img {
+.star-icon.spinning img {
     animation: rotate-center-normal 1s ease-in 0s 1 normal none;
 }
 
@@ -133,7 +140,7 @@ p {
 }
 
 @media (max-width: 600px) {
-    .flower-icon {
+    .star-icon {
         top: 0;
         right: 0;
         width: 8vw;
@@ -146,3 +153,72 @@ p {
         height: 8vw;
     }
 }
+
+
+.floating-birds {
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    width: auto; 
+    height: auto; 
+    z-index: 1000; 
+    pointer-events: none; 
+    animation: breathe-birds 5s ease-in-out infinite alternate; 
+    transform-origin: bottom right; 
+}
+
+.floating-birds img {
+    display: block;
+    max-width: 25vw; 
+    height: auto; 
+}
+
+@keyframes breathe-birds {
+    0% {
+    transform: scale(1);
+    opacity: 0.9; 
+}
+    50% {
+    transform: scale(1.01); 
+    opacity: 1; 
+}
+    100% {
+    transform: scale(1);
+    opacity: 0.9; 
+}
+}
+
+.middle-left-flowers {
+    position: fixed;
+    top: 25%;
+    left: -2.5vw; /* Adjust to control how much is visible (approx. 50% of a 50vw width) */
+    width: auto;
+    height: auto;
+    z-index: 999;
+    pointer-events: none;
+    transform: translateY(-50%) rotate(30deg); /* Center vertically and rotate */
+    transform-origin: center left;
+    animation: breathe-flowers 6s ease-in-out infinite alternate;
+    opacity: 0.8;
+  }
+  
+  .middle-left-flowers img {
+    display: block;
+    max-width: 20vw; /* Limit the maximum width to 50% of the viewport width */
+    height: auto;
+  }
+  
+  @keyframes breathe-flowers {
+    0% {
+      transform: translateY(-50%) rotate(30deg) scale(1);
+      opacity: 0.8;
+    }
+    50% {
+      transform: translateY(-50%) rotate(30deg) scale(1.01); /* Subtle zoom */
+      opacity: 1;
+    }
+    100% {
+      transform: translateY(-50%) rotate(30deg) scale(1);
+      opacity: 0.8;
+    }
+  }
