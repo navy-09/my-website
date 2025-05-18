@@ -1,3 +1,5 @@
+
+/* defining fonts with local font files*/
 @font-face {
     font-family: 'glacial-indifference';
     src: url('fonts/GlacialIndifference-Regular.otf');
@@ -13,6 +15,42 @@
     src: url('fonts/tan-pearl.otf');
 }
 
+@font-face {
+    font-family: 'quicksand-light';
+    src: url('fonts/Quicksand-Light.ttf');
+}
+
+@font-face {
+    font-family: 'quicksand-semibold';
+    src: url('fonts/Quicksand-SemiBold.ttf');
+}
+
+
+.typewriter h1 {
+    color: #fff;
+    font-family: quicksand-light;
+    overflow: hidden;
+    border-right: .05em solid #f4f4f4;
+    white-space: nowrap;
+    margin: 0 auto;
+    letter-spacing: .15em;
+    font-size: 3vw; /* Your responsive font size */
+    width: fit-content; /* Important */
+    animation:
+      typing 3.5s steps(60, end) forwards,
+      blink-caret .75s step-end infinite;
+  }
+
+  @keyframes typing {
+    from { width: 0 }
+    to { width: 100% } /* We'll override this with JS */
+  }
+
+  @keyframes blink-caret {
+    from, to { border-color: transparent }
+    50% { border-color: #f4f4f4 }
+  }
+
 body {
     margin: 0;
     padding: 0;
@@ -23,10 +61,10 @@ body {
 
 h1 {
     position: relative;
-    font-family: 'glacial-indifference';
+    font-family: 'quicksand-light';
     color: #f4f4f4;
     text-align: center;
-    font-size: 5vw;
+    font-size: 3vw;
 }
 
 p {
@@ -64,6 +102,9 @@ p {
     max-height: 100%;
     object-fit: contain;
 }
+
+
+/* flower icon animation on click*/
 .flower-icon {
     position: fixed;
     top: 0;

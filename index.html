@@ -15,16 +15,57 @@
     <div class="flower-icon">
         <img src="media/flower.png" alt="Flower Icon">
     </div>
-
-<h1 style='padding-top: 10vw;'>
-    Software Development
-</h1>
+    <div class="typewriter" style="padding-top:10vw;">
+        <h1 id="typing-text">Software Development</h1>
+      </div>
 
     <script>
         const flowerIcon = document.querySelector('.flower-icon');
         flowerIcon.addEventListener('click', () => {
             flowerIcon.classList.toggle('spinning');
         })
-    </script>
+        
+        document.addEventListener('DOMContentLoaded', function() {
+        const typingTextElement = document.getElementById('typing-text');
+
+        function updateTypingAnimation() {
+            typingTextElement.style.width = 'auto';
+            const textWidth = typingTextElement.offsetWidth;
+            typingTextElement.style.width = 'fit-content';
+
+            // Find the main.css stylesheet
+            let mainStylesheet;
+            for (let i = 0; i < document.styleSheets.length; i++) {
+            if (document.styleSheets[i].href && document.styleSheets[i].href.includes('main.css')) {
+                mainStylesheet = document.styleSheets[i];
+                break;
+            }
+            }
+
+            if (mainStylesheet) {
+            let typingRule;
+            for (let i = 0; i < mainStylesheet.cssRules.length; i++) {
+                if (mainStylesheet.cssRules[i].name === 'typing') {
+                typingRule = mainStylesheet.cssRules[i];
+                break;
+                }
+            }
+
+            if (typingRule) {
+                typingRule.deleteRule('to');
+                typingRule.insertRule(`to { width: ${textWidth}px }`);
+            } else {
+                console.error("Could not find the '@keyframes typing' rule in main.css");
+            }
+            } else {
+            console.error("Could not find the main.css stylesheet");
+            }
+        }
+
+        updateTypingAnimation();
+        window.addEventListener('resize', updateTypingAnimation);
+        });
+
+</script>
 </body>
 </html>
