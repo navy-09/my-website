@@ -5,9 +5,10 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script src="https://kit.fontawesome.com/0a35f3f1a0.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="main.css">
-    <title>My Website</title>
+    <title>Nav Dhillon</title>
 </head>
 <body>
+
     <ul class="fireflies">
         <li></li>
         <li></li>
@@ -20,24 +21,24 @@
         <li></li>
         <li></li>
         <li></li>
-      </ul>
+        <li></li>
+        <li></li>
+    </ul>
 
-    <div class="texture-overlay"></div>
-    <!--Nav Bar-->
     <div class="nav">
         <ul>
             <li><a href="index.html">Home</a></li>
-            <li><a href="">Projects</a></li>
+            <li><a href="projects.html" class="active">Projects</a></li>
             <li><a href="">Contact</a></li>
             <li><a href="">About</a></li>
         </ul>
     </div>
-
+    <div class="texture-overlay"></div>
     <div class="star-icon">
         <img src="media/star-light.png" alt="star Icon">
     </div>
-    <div class="typewriter" style="padding-top:10vw;">
-        <h1 id="typing-text">Software Development</h1>
+    <div class="typewriter" style="padding-top:10vw;padding-bottom:5vw;">
+        <h1 id="typing-text">Software Developer</h1>
     </div>
 
     <div class="middle-left-flowers">
@@ -48,36 +49,141 @@
         <img src="media/birds.png" alt="Birds">
     </div>
 
+    <div class="projects-container" style="padding-top: 5vw; display: flex; flex-wrap: wrap; justify-content: center; width: 80%;">
+        <div class="project-card"
+             data-title="Project Description: Inland Marina"
+             data-languages="ASP.NET Core MVC, Entity Framework, C#, HTML, CSS, Bootstrap"
+             data-video="media/InlandMarina.mp4"
+             data-description-file="descriptions\InlandMarina.txt"
+             data-snapshot="media/InlandMarina.png">
+            <img src="media/InlandMarina.png" alt="Inland Marina Snapshot">
+            <div class="project-info">
+                <h3>Inland Marina</h3>
+                <h1></h1>
+                <p class="languages">ASP.NET Core MVC, Entity Framework, C#, HTML, CSS, Bootstrap</p>
+            </div>
+        </div>
+
+        <div class="project-card" data-title="Project Title 2" data-languages="Python, Django" data-video="media/project2-video.mp4" data-description="Detailed description of Project 2 goes here. Talk about the technologies used and the outcome of the project." data-snapshot="media/project2-snapshot.jpg">
+            <img src="media/project2-snapshot.jpg" alt="Project 2 Snapshot">
+            <div class="project-info">
+                <h3>Project Title 2</h3>
+                <p class="languages">Python, Django</p>
+            </div>
+        </div>
+
+        </div>
+
+    <div id="project-overlay" class="project-overlay">
+        <div class="project-overlay-content">
+            <span class="close-button">&times;</span>
+            <h3 id="overlay-title"></h3>
+            <video id="overlay-video" controls style="width: 100%;"></video>
+            <p id="overlay-description"></p>
+        </div>
+    </div>
+
+    <div class="about-me-container">
+        <div class="about-me-content">
+            <img src="media/profile.JPEG" alt="Profile Picture">
+            <h2>About Me</h2>
+            <p>
+                Hi there! I'm a passionate software developer with a love for creating innovative and user-friendly applications. I'm constantly learning and exploring new technologies to expand my skillset.
+            </p>
+            <div class="social-links">
+                <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+                <a href="#" target="_blank"><i class="fab fa-linkedin"></i></a>
+                </div>
+        </div>
+    </div>
 
     <script>
         document.addEventListener('DOMContentLoaded', function() {
-        const navLinks = document.querySelectorAll('.nav ul li a');
-        const currentPage = window.location.pathname.split('/').pop(); // Get the current page filename
+            // Navigation active link logic
+            const navLinks = document.querySelectorAll('.nav ul li a');
+            const currentPage = window.location.pathname.split('/').pop();
 
-        navLinks.forEach(link => {
-            const linkPath = link.getAttribute('href').split('/').pop();
+            navLinks.forEach(link => {
+                const linkPath = link.getAttribute('href').split('/').pop();
+                if (linkPath === currentPage) {
+                    link.classList.add('active');
+                } else if (currentPage === 'projects.html' && linkPath === 'Projects') {
+                    link.classList.add('active');
+                }
+            });
 
-            if (linkPath === currentPage || (currentPage === '' && linkPath === '')) {
-            link.classList.add('active');
-            }
-        });
+            // Star icon animation
+            const starIcon = document.querySelector('.star-icon');
+            const starImg = starIcon.querySelector('img');
+            const lightStarSrc = 'media/star-light.png';
+            const darkStarSrc = 'media/star-dark.png';
 
-        const starIcon = document.querySelector('.star-icon');
-        const starImg = starIcon.querySelector('img');
-        const lightStarSrc = 'media/star-light.png';
-        const darkStarSrc = 'media/star-dark.png';
+            starIcon.addEventListener('mouseover', () => {
+                starImg.src = darkStarSrc;
+            });
 
-        starIcon.addEventListener('mouseover', () => {
-            starImg.src = darkStarSrc;
-        });
+            starIcon.addEventListener('mouseout', () => {
+                starImg.src = lightStarSrc;
+            });
 
-        starIcon.addEventListener('mouseout', () => {
-            starImg.src = lightStarSrc;
-        });
+            starIcon.addEventListener('click', () => {
+                starIcon.classList.toggle('spinning');
+            });
 
-        starIcon.addEventListener('click', () => {
-            starIcon.classList.toggle('spinning');
-        });
+            // Project card overlay logic with file fetching
+            const projectCards = document.querySelectorAll('.project-card');
+            const projectOverlay = document.getElementById('project-overlay');
+            const overlayTitle = document.getElementById('overlay-title');
+            const overlayVideo = document.getElementById('overlay-video');
+            const overlayDescription = document.getElementById('overlay-description');
+            const closeButton = document.querySelector('.close-button');
+
+            projectCards.forEach(card => {
+                card.style.cursor = 'pointer';
+                card.addEventListener('click', () => {
+                    const title = card.dataset.title;
+                    const videoSrc = card.dataset.video;
+                    overlayTitle.textContent = title;
+                    overlayVideo.src = videoSrc || ''; // Handle cases with no video
+                    overlayDescription.textContent = ''; // Clear previous description
+
+                    const descriptionFile = card.dataset.descriptionFile;
+                    if (descriptionFile) {
+                        fetch(descriptionFile)
+                            .then(response => response.text())
+                            .then(data => {
+                                overlayDescription.textContent = data;
+                                projectOverlay.style.display = 'flex';
+                            })
+                            .catch(error => {
+                                console.error("Error fetching description:", error);
+                                overlayDescription.textContent = "Failed to load description.";
+                                projectOverlay.style.display = 'flex';
+                            });
+                    } else {
+                        overlayDescription.textContent = card.dataset.description || "No description available.";
+                        projectOverlay.style.display = 'flex';
+                    }
+
+                    // Pause any playing video when overlay opens
+                    const allVideos = document.querySelectorAll('video');
+                    allVideos.forEach(video => video.pause());
+                });
+            });
+
+            closeButton.addEventListener('click', () => {
+                projectOverlay.style.display = 'none';
+                // Optionally reset video src to stop loading
+                overlayVideo.src = '';
+            });
+
+            // Close overlay when clicking outside
+            window.addEventListener('click', (event) => {
+                if (event.target === projectOverlay) {
+                    projectOverlay.style.display = 'none';
+                    overlayVideo.src = '';
+                }
+            });
         });
     </script>
 </body>
