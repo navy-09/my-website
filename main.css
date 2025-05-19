@@ -500,17 +500,3 @@ p {
         font-size: 1.5vw;
     }
 }
-
-#project-overlay-content h3,
-#project-overlay-content h4,
-#project-overlay-content h5 {
-    margin-top: 0.5em; /* Reduce top margin */
-    margin-bottom: 0.3em; /* Reduce bottom margin */
-}
-
-#project-overlay-content p {
-    color: black; /* Set text color to black */
-    margin-top: 0.3em;
-    margin-bottom: 0.5em;
-    /* Add any other paragraph styles here */
-}
