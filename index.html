@@ -51,7 +51,7 @@
 
     <div class="projects-container" style="padding-top: 5vw; display: flex; flex-wrap: wrap; justify-content: center; width: 80%;">
         <div class="project-card"
-             data-title="Project Description: Inland Marina"
+             data-title="Project: Inland Marina"
              data-languages="ASP.NET Core MVC, Entity Framework, C#, HTML, CSS, Bootstrap"
              data-video="media/InlandMarina.mp4"
              data-description-file="descriptions\InlandMarina.txt"
@@ -150,16 +150,16 @@
                     const descriptionFile = card.dataset.descriptionFile;
                     if (descriptionFile) {
                         fetch(descriptionFile)
-                            .then(response => response.text())
-                            .then(data => {
-                                overlayDescription.textContent = data;
-                                projectOverlay.style.display = 'flex';
-                            })
-                            .catch(error => {
-                                console.error("Error fetching description:", error);
-                                overlayDescription.textContent = "Failed to load description.";
-                                projectOverlay.style.display = 'flex';
-                            });
+                        .then(response => response.text())
+                        .then(data => {
+                            overlayDescription.innerHTML = data; // Use innerHTML to render HTML
+                            projectOverlay.style.display = 'flex';
+                        })
+                        .catch(error => {
+                            console.error("Error fetching description:", error);
+                            overlayDescription.textContent = "Failed to load description.";
+                            projectOverlay.style.display = 'flex';
+                        });
                     } else {
                         overlayDescription.textContent = card.dataset.description || "No description available.";
                         projectOverlay.style.display = 'flex';
