@@ -157,7 +157,6 @@
 
     <script>
     document.addEventListener('DOMContentLoaded', function() {
-        // Navigation active link logic (initial load - based on URL)
         const navLinks = document.querySelectorAll('.nav ul li a');
         const currentPage = window.location.pathname.split('/').pop();
 
@@ -170,10 +169,9 @@
             }
         });
 
-        // Function to highlight the active navigation link based on scroll position
         function highlightActiveNavLink() {
             const navLinks = document.querySelectorAll('.nav ul li a');
-            const sections = document.querySelectorAll('div[id$="-section"]'); // Select all divs ending with "-section"
+            const sections = document.querySelectorAll('div[id$="-section"]'); 
             const scrollPosition = window.scrollY;
             const windowHeight = window.innerHeight;
 
@@ -184,25 +182,21 @@
                 const sectionId = section.id;
                 const correspondingNavLink = document.querySelector(`.nav ul li a[href="#${sectionId}"]`);
 
-                // Check if the section is within the viewport
                 if (scrollPosition >= sectionTop - windowHeight / 3 && scrollPosition < sectionBottom - windowHeight / 3) {
-                    navLinks.forEach(link => link.classList.remove('active')); // Remove active class from all links
+                    navLinks.forEach(link => link.classList.remove('active'));
                     if (correspondingNavLink) {
-                        correspondingNavLink.classList.add('active'); // Add active class to the current section's link
+                        correspondingNavLink.classList.add('active'); 
                     }
                 } else if (scrollPosition === 0 && document.querySelector(`.nav ul li a[href="#home-section"]`)) {
-                    // Special case for the top of the page
                     navLinks.forEach(link => link.classList.remove('active'));
                     document.querySelector(`.nav ul li a[href="#home-section"]`).classList.add('active');
                 }
             });
         }
 
-        // Call the function on initial load and on scroll
         highlightActiveNavLink();
         window.addEventListener('scroll', highlightActiveNavLink);
 
-        // Star icon animation
         const starIcon = document.querySelector('.star-icon');
         const starImg = starIcon.querySelector('img');
         const lightStarSrc = 'media/star-light.png';
@@ -220,7 +214,6 @@
             starIcon.classList.toggle('spinning');
         });
 
-        // Project card overlay logic with file fetching
         const projectCards = document.querySelectorAll('.project-card');
         const projectOverlay = document.getElementById('project-overlay');
         const overlayTitle = document.getElementById('overlay-title');
@@ -234,15 +227,15 @@
                 const title = card.dataset.title;
                 const videoSrc = card.dataset.video;
                 overlayTitle.textContent = title;
-                overlayVideo.src = videoSrc || ''; // Handle cases with no video
-                overlayDescription.textContent = ''; // Clear previous description
+                overlayVideo.src = videoSrc || ''; 
+                overlayDescription.textContent = ''; 
 
                 const descriptionFile = card.dataset.descriptionFile;
                 if (descriptionFile) {
                     fetch(descriptionFile)
                         .then(response => response.text())
                         .then(data => {
-                            overlayDescription.innerHTML = data; // Use innerHTML to render HTML
+                            overlayDescription.innerHTML = data; 
                             projectOverlay.style.display = 'flex';
                         })
                         .catch(error => {
@@ -255,7 +248,6 @@
                     projectOverlay.style.display = 'flex';
                 }
 
-                // Pause any playing video when overlay opens
                 const allVideos = document.querySelectorAll('video');
                 allVideos.forEach(video => video.pause());
             });
@@ -263,11 +255,9 @@
 
         closeButton.addEventListener('click', () => {
             projectOverlay.style.display = 'none';
-            // Optionally reset video src to stop loading
             overlayVideo.src = '';
         });
 
-        // Close overlay when clicking outside
         window.addEventListener('click', (event) => {
             if (event.target === projectOverlay) {
                 projectOverlay.style.display = 'none';

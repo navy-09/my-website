@@ -1,251 +1,237 @@
-/* defining fonts with local font files*/
+/* main.css */
+
 @font-face {
-    font-family: 'glacial-indifference';
-    src: url('fonts/GlacialIndifference-Regular.otf');
+  font-family: 'glacial-indifference';
+  src: url('fonts/GlacialIndifference-Regular.otf');
 }
 
 @font-face {
-    font-family: 'glacial-indifference-bold';
-    src: url('fonts/GlacialIndifference-Bold.otf');
+  font-family: 'glacial-indifference-bold';
+  src: url('fonts/GlacialIndifference-Bold.otf');
 }
 
 @font-face {
-    font-family: 'tan-pearl';
-    src: url('fonts/tan-pearl.otf');
+  font-family: 'tan-pearl';
+  src: url('fonts/tan-pearl.otf');
 }
 
 @font-face {
-    font-family: 'quicksand-light';
-    src: url('fonts/Quicksand-Light.ttf');
+  font-family: 'quicksand-light';
+  src: url('fonts/Quicksand-Light.ttf');
 }
 
 @font-face {
-    font-family: 'quicksand-semibold';
-    src: url('fonts/Quicksand-SemiBold.ttf');
+  font-family: 'quicksand-semibold';
+  src: url('fonts/Quicksand-SemiBold.ttf');
 }
 
 body {
-    margin: 0;
-    padding: 0;
-    background-image: linear-gradient(to bottom, #799BAD, #F4F4F4);
-    min-height: 100vh;
-    display: grid; /* Enable Grid for the body */
-    place-items: center; /* Centers both horizontally and vertically */
+  margin: 0;
+  padding: 0;
+  background-image: linear-gradient(to bottom, #799BAD, #F4F4F4);
+  min-height: 100vh;
+  display: grid;
+  place-items: center;
 }
 
-
 h1#typing-text {
-    position: relative;
-    font-family: 'quicksand-light';
-    color: #f4f4f4;
-    text-align: center;
-    font-size: 3vw;
-    transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
-    text-shadow: 2px 2px 4px transparent;
+  position: relative;
+  font-family: 'quicksand-light';
+  color: #f4f4f4;
+  text-align: center;
+  font-size: 3vw;
+  transition: color 0.3s ease-in-out, text-shadow 0.3s ease-in-out;
+  text-shadow: 2px 2px 4px transparent;
 }
 
 h1#typing-text:hover {
-    text-shadow: 2px 2px 4px #0B3948;
+  text-shadow: 2px 2px 4px #0B3948;
 }
 
 .nav {
-    position: fixed; /* Or position: absolute; */
-    top: 0;
-    left: 0;
-    width: 100%; /* Make it span the top */
-    z-index: 1001; /* Ensure it's above other fixed/absolute elements */
-    /* Add any other styles for your navigation bar */
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1001;
 }
 
 .nav ul {
-    position: relative;
-    font-family: 'quicksand-semibold';
-    color: #f4f4f4;
-    text-align: left;
-    font-size: 1.25vw;
-    padding: 1%;
-    padding-top: 0.5%;
-    list-style-type: none;
-    margin: 0;
+  position: relative;
+  font-family: 'quicksand-semibold';
+  color: #f4f4f4;
+  text-align: left;
+  font-size: 1.25vw;
+  padding: 1%;
+  padding-top: 0.5%;
+  list-style-type: none;
+  margin: 0;
+  display: flex;
+  justify-content: flex-start; 
 }
 
 .nav ul li {
-    display: inline; /* Or display: inline-block; */
-    padding-right: 1vw; /* Add some spacing between items */
+  display: inline;
+  padding-right: 1vw;
 }
 
 .nav ul li a {
-    text-decoration: none; /* Remove the underline */
-    color: inherit;
+  text-decoration: none;
+  color: inherit;
 }
 
 .nav ul li a:hover {
-    text-decoration: none; /* Remove the underline */
-    color: #0B3948;
+  text-decoration: none;
+  color: #0B3948;
 }
 
 .nav ul li a.active {
-    color: #0B3948; /* This will be the hover color */
+  color: #0B3948;
 }
 
 p {
-    position: relative;
-    font-family: 'glacial-indifference';
-    color: #f4f4f4;
+  position: relative;
+  font-family: 'glacial-indifference';
+  color: #f4f4f4;
 }
-
 
 .texture-overlay {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('media/grainoverlay.png');
-    background-repeat: repeat;
-    background-size: auto;
-    opacity: 0.5;
-    pointer-events: none;
-    z-index: -1;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: url('media/grainoverlay.png');
+  background-repeat: repeat;
+  background-size: auto;
+  opacity: 0.5;
+  pointer-events: none;
+  z-index: -1;
 }
 
-/* star icon animation on click*/
 .star-icon {
-    position: fixed;
-    top: 0;
-    right: 0;
-    padding: 1%;
-    cursor: pointer;
-    width: 2vw;
-    height: 2vw;
-    transition: transform 1s ease-in-out;
-    float: right;
+  position: fixed;
+  top: 0;
+  right: 0;
+  padding: 1%;
+  cursor: pointer;
+  width: 2vw;
+  height: 2vw;
+  transition: transform 1s ease-in-out;
+  float: right;
 }
 
 .star-icon img {
-    width: 100%;
-    height: 100%;
-    transform-origin: center;
+  width: 100%;
+  height: 100%;
+  transform-origin: center;
 }
 
 .star-icon.spinning img {
-    animation: rotate-center-normal 1s ease-in 0s 1 normal none;
+  animation: rotate-center-normal 1s ease-in 0s 1 normal none;
 }
 
 @keyframes rotate-center-normal {
-    0% { transform: rotate(0); }
-    100% { transform: rotate(360deg);}
+  0% {
+    transform: rotate(0);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
-
-@media (max-width: 600px) {
-    .star-icon {
-        top: 0;
-        right: 0;
-        width: 8vw;
-        height: 8vw;
-    }
-    .menu-icon {
-        top: 0;
-        left: 0;
-        width: 8vw;
-        height: 8vw;
-    }
-}
-
 
 .floating-birds {
-    position: fixed;
-    bottom: 0;
-    right: 0;
-    width: auto;
-    height: auto;
-    z-index: 1000;
-    pointer-events: none;
-    animation: breathe-birds 5s ease-in-out infinite alternate;
-    transform-origin: bottom right;
+  position: fixed;
+  bottom: 0;
+  right: 0;
+  width: auto;
+  height: auto;
+  z-index: 1000;
+  pointer-events: none;
+  animation: breathe-birds 5s ease-in-out infinite alternate;
+  transform-origin: bottom right;
 }
 
 .floating-birds img {
-    display: block;
-    max-width: 25vw;
-    height: auto;
+  display: block;
+  max-width: 25vw;
+  height: auto;
 }
 
 @keyframes breathe-birds {
-    0% {
-        transform: scale(1);
-        opacity: 0.9;
-    }
-    50% {
-        transform: scale(1.01);
-        opacity: 1;
-    }
-    100% {
-        transform: scale(1);
-        opacity: 0.9;
-    }
+  0% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
+  50% {
+    transform: scale(1.01);
+    opacity: 1;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 0.9;
+  }
 }
 
 .middle-left-flowers {
-    position: fixed;
-    top: 25%;
-    left: -2.5vw; /* Adjust to control how much is visible (approx. 50% of a 50vw width) */
-    width: auto;
-    height: auto;
-    z-index: 999;
-    pointer-events: none;
-    transform: translateY(-50%) rotate(30deg); /* Center vertically and rotate */
-    transform-origin: center left;
-    animation: breathe-flowers 6s ease-in-out infinite alternate;
-    opacity: 0.8;
+  position: fixed;
+  top: 25%;
+  left: -2.5vw;
+  width: auto;
+  height: auto;
+  z-index: 999;
+  pointer-events: none;
+  transform: translateY(-50%) rotate(30deg);
+  transform-origin: center left;
+  animation: breathe-flowers 6s ease-in-out infinite alternate;
+  opacity: 0.8;
 }
 
 .middle-left-flowers img {
-    display: block;
-    max-width: 20vw; /* Limit the maximum width to 50% of the viewport width */
-    height: auto;
+  display: block;
+  max-width: 20vw;
+  height: auto;
 }
 
 @keyframes breathe-flowers {
-    0% {
-        transform: translateY(-50%) rotate(30deg) scale(1);
-        opacity: 0.8;
-    }
-    50% {
-        transform: translateY(-50%) rotate(30deg) scale(1.01); /* Subtle zoom */
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(-50%) rotate(30deg) scale(1);
-        opacity: 0.8;
-    }
+  0% {
+    transform: translateY(-50%) rotate(30deg) scale(1);
+    opacity: 0.8;
+  }
+  50% {
+    transform: translateY(-50%) rotate(30deg) scale(1.01);
+    opacity: 1;
+  }
+  100% {
+    transform: translateY(-50%) rotate(30deg) scale(1);
+    opacity: 0.8;
+  }
 }
 
 .fireflies {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    overflow: hidden;
-    pointer-events: none;
-    z-index: 998;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  pointer-events: none;
+  z-index: 998;
 }
 
 .fireflies li {
-    position: absolute;
-    display: block;
-    width: 3px;
-    height: 3px;
-    border-radius: 50%;
-    background-color: white;
-    box-shadow: 0 0 3px 1px rgba(255, 255, 255, 0.8);
-    opacity: 0;
-    animation: float-in 15s linear infinite,
-                organic-drift 20s ease-in-out infinite alternate; /* Organic drift animation */
+  position: absolute;
+  display: block;
+  width: 3px;
+  height: 3px;
+  border-radius: 50%;
+  background-color: white;
+  box-shadow: 0 0 3px 1px rgba(255, 255, 255, 0.8);
+  opacity: 0;
+  animation: float-in 15s linear infinite,
+              organic-drift 20s ease-in-out infinite alternate;
 }
 
-/* Individual delays */
 .fireflies li:nth-child(1) { animation-delay: 0.5s, 1s; top: 10vh; left: 10vw; }
 .fireflies li:nth-child(2) { animation-delay: 1.5s, 3s; top: 30vh; left: 80vw; }
 .fireflies li:nth-child(3) { animation-delay: 2.5s, 5s; top: 50vh; left: 20vw; }
@@ -259,260 +245,438 @@ p {
 .fireflies li:nth-child(11) { animation-delay: 10.5s, 21s; top: 75vh; left: 15vw; }
 
 @keyframes float-in {
-    0% { opacity: 0; transform: scale(0.5); }
-    10% { opacity: 1; transform: scale(1); }
-    90% { opacity: 1; transform: scale(1); }
-    100% { opacity: 0; transform: scale(0.5); }
+  0% { opacity: 0; transform: scale(0.5); }
+  10% { opacity: 1; transform: scale(1); }
+  90% { opacity: 1; transform: scale(1); }
+  100% { opacity: 0; transform: scale(0.5); }
 }
 
 @keyframes organic-drift {
-    0% { transform: translate(0, 0) scale(1); }
-    25% { transform: translate(10vw, 5vh) scale(1.1); }
-    50% { transform: translate(-5vw, 15vh) scale(0.9); }
-    75% { transform: translate(5vw, -10vh) scale(1.05); }
-    100% { transform: translate(0, 0) scale(1); }
+  0% { transform: translate(0, 0) scale(1); }
+  25% { transform: translate(10vw, 5vh) scale(1.1); }
+  50% { transform: translate(-5vw, 15vh) scale(0.9); }
+  75% { transform: translate(5vw, -10vh) scale(1.05); }
+  100% { transform: translate(0, 0) scale(1); }
 }
 
-/* Styles for the about-me-container */
 .about-me-container {
-    padding-top: 10vw; /* Adjusted padding */
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    width: 60%;
+  padding-top: 10vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 60%;
 }
 
-/* Styles for the about-me-content */
 .about-me-content {
-    background-color: rgba(244, 244, 244, 0.8);
-    padding: 2vw;
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    text-align: center;
-    max-width: 80vw; /* Adjusted max-width */
-    margin-bottom: 2vw; /* Space between description and form */
-    padding-top: 7vw; /* Adjust the top padding to accommodate the image spacing */
+  background-color: rgba(244, 244, 244, 0.8);
+  padding: 2vw;
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  max-width: 80vw;
+  margin-bottom: 2vw;
+  padding-top: 7vw;
 }
 
 .about-me-content img {
-    width: 10vw;
-    height: 10vw;
-    border-radius: 50%;
-    object-fit: cover;
-    margin-bottom: 1vw;
-    border: 0.2vw solid white; /* 1% border */
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2); /* Similar shadow to the heading hover */
+  width: 10vw;
+  height: 10vw;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 1vw;
+  border: 0.2vw solid white;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
 }
 
-/* Style for the About Me heading */
 .about-me-content h2 {
-    font-family: 'quicksand-semibold';
-    color: #0B3948;
-    margin-bottom: 0.5vw;
-    font-size: 2vw;
+  font-family: 'quicksand-semibold';
+  color: #0B3948;
+  margin-bottom: 0.5vw;
+  font-size: 2vw;
 }
 
-/* Style for the paragraph text */
 .about-me-content p {
-    font-family: 'glacial-indifference';
-    color: #333;
-    line-height: 1.6;
-    font-size: 1.2vw;
+  font-family: 'glacial-indifference';
+  color: #333;
+  line-height: 1.6;
+  font-size: 1.2vw;
 }
 
 .social-links {
-    display: flex; /* Arrange icons horizontally */
-    align-items: center; /* Vertically align icons */
-    padding-top: 2vw; /* Adjust spacing from the element above */
-    justify-content: flex-start; /* Align items to the start and let spacing handle distribution */
-}
-
-.social-links {
-    display: flex;
-    align-items: center;
-    padding-top: 2vw;
-    justify-content: flex-start;
+  display: flex;
+  align-items: center;
+  padding-top: 2vw;
+  justify-content: flex-start;
 }
 
 .social-icon {
-    width: 2.5vw;
-    height: 2.5vw;
-    border-radius: 50%;
-    background-color: white;
-    display: flex; /* Ensure flexbox is active */
-    justify-content: center; /* Center horizontally */
-    align-items: center; /* Center vertically */
-    margin-right: 0.8vw;
-    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
-    transition: transform 0.3s ease-in-out;
+  width: 2.5vw;
+  height: 2.5vw;
+  border-radius: 50%;
+  background-color: white;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-right: 0.8vw;
+  box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease-in-out;
 }
 
 .social-icon:hover {
-    transform: scale(1.1);
+  transform: scale(1.1);
 }
 
 .social-icon img {
-    display: block;
-    width: 100%; /* Make the image try to fill the container */
-    height: 100%; /* Make the image try to fill the container */
-    object-fit: contain; /* Scale the image to fit within the container */
-    /* Remove any default margins or padding that might be pushing it out */
-    margin: 0;
-    padding: 0;
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  margin: 0;
+  padding: 0;
 }
 
-/* Media queries for smaller screens */
-@media (max-width: 768px) {
-    .social-icon {
-        width: 5vw;
-        height: 5vw;
-        margin-right: 1.5vw;
-    }
-
-    .social-icon img {
-        width: 80%; /* Adjust if needed for smaller screens */
-        height: 80%; /* Adjust if needed for smaller screens */
-    }
-}
-
-/* Styles for the projects section */
 .projects-container {
-    padding-top: 5vw;
-    display: flex;
-    flex-direction: column; /* Stack items vertically */
-    align-items: center; /* Center items horizontally */
-    max-width: 60%; /* Match the width of about-me-container */
-    width: 100%; /* Ensure it doesn't exceed the viewport */
+  padding-top: 5vw;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  max-width: 60%;
+  width: 100%;
 }
 
 .project-card {
-    background-color: rgba(244, 244, 244, 0.9);
-    border-radius: 10px;
-    box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
-    margin: 1.5vw 0; /* Vertical margin to separate cards */
-    width: 100%;
-    height: 15vw; /* Set a fixed height for the card */
-    display: flex; /* Enable flexbox for image and text layout */
-    align-items: center; /* Vertically align image and text */
-    overflow: hidden;
-    transition: transform 0.3s ease-in-out;
-    cursor: pointer; /* Indicate it's clickable */
+  background-color: rgba(244, 244, 244, 0.9);
+  border-radius: 10px;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 1.5vw 0;
+  width: 100%;
+  height: 15vw;
+  display: flex;
+  align-items: center;
+  overflow: hidden;
+  transition: transform 0.3s ease-in-out;
+  cursor: pointer;
 }
 
 .project-card:hover {
-    transform: scale(1.02);
+  transform: scale(1.02);
 }
 
 .project-card img {
-    width: 27%; /* Adjust as needed for the image width */
-    height: 100%; /* Make the image fill the card's height */
-    display: block;
-    object-fit: fill; /* Maintain image aspect ratio and cover the area */
+  width: 27%;
+  height: 100%;
+  display: block;
+  object-fit: fill;
 }
 
 .project-info {
-    padding: 2vw;
-    text-align: left; /* Align text to the left */
-    width: 60%; /* Take up the remaining width for the text */
+  padding: 2vw;
+  text-align: left;
+  width: 60%;
 }
 
 .project-info h3 {
-    font-family: 'quicksand-semibold';
-    color: #0B3948;
-    margin-bottom: 0.5vw;
-    font-size: 1.5vw;
+  font-family: 'quicksand-semibold';
+  color: #0B3948;
+  margin-bottom: 0.5vw;
+  font-size: 1.5vw;
 }
 
 .project-info .languages {
-    font-family: 'glacial-indifference';
-    color: #555;
-    font-size: 1vw;
+  font-family: 'glacial-indifference';
+  color: #555;
+  font-size: 1vw;
 }
 
-/* Styles for the project overlay */
 .project-overlay {
-    display: none; /* Hidden by default */
-    position: fixed; /* Stay in place */
-    z-index: 1002; /* Above nav and other elements */
-    left: 0;
-    top: 0;
-    width: 100%; /* Full width */
-    height: 100%; /* Full height */
-    background-color: rgba(0, 0, 0, 0.8); /* Semi-transparent background */
-    justify-content: center; /* Center content horizontally */
-    align-items: center; /* Center content vertically */
-    overflow: auto; /* Enable scroll if content is too long */
-    padding-top: 5vh; /* Add padding at the top to create space */
+  display: none;
+  position: fixed;
+  z-index: 1002;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  justify-content: center;
+  align-items: center;
+  overflow: auto;
+  padding-top: 5vh;
 }
 
 .project-overlay-content {
-    background-color: #fefefe;
-    margin: 0 auto; /* Remove the default top margin */
-    padding: 2vw;
-    padding-top: 4vw; /* Increased top padding for content */
-    border: 1px solid #888;
-    width: 70%; /* Reduced width */
-    border-radius: 10px;
-    position: relative; /* For close button positioning */
+  background-color: #fefefe;
+  margin: 0 auto;
+  padding: 2vw;
+  padding-top: 4vw;
+  border: 1px solid #888;
+  width: 70%;
+  border-radius: 10px;
+  position: relative;
 }
 
 .close-button {
-    color: #aaa;
-    position: absolute;
-    top: 1vw;
-    right: 1.5vw;
-    font-size: 2.5vw;
-    font-weight: bold;
-    cursor: pointer;
+  color: #aaa;
+  position: absolute;
+  top: 1vw;
+  right: 1.5vw;
+  font-size: 2.5vw;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .close-button:hover,
 .close-button:focus {
-    color: black;
-    text-decoration: none;
-    cursor: pointer;
+  color: black;
+  text-decoration: none;
+  cursor: pointer;
 }
 
 #overlay-title {
-    font-family: 'quicksand-semibold';
-    color: #0B3948;
-    margin-bottom: 1vw;
-    font-size: 2vw;
-    text-align: center;
-    padding-bottom: 1vw;
+  font-family: 'quicksand-semibold';
+  color: #0B3948;
+  margin-bottom: 1vw;
+  font-size: 2vw;
+  text-align: center;
+  padding-bottom: 1vw;
 }
 
 #overlay-video {
-    width: 100%;
-    margin-bottom: 1vw;
+  width: 100%;
+  margin-bottom: 1vw;
 }
 
 #overlay-description {
-    font-family: 'glacial-indifference';
-    color: #333;
-    font-size: 1.2vw;
-    line-height: 1.6;
-    white-space: pre-line;
+  font-family: 'glacial-indifference';
+  color: #333;
+  font-size: 1.2vw;
+  line-height: 1.6;
+  white-space: pre-line;
 }
 
-/* Media queries for overlay content responsiveness */
+
+@media (max-width: 1200px) {
+  .nav ul {
+    font-size: 1.5vw;
+  }
+
+  h1#typing-text {
+    font-size: 4vw;
+  }
+
+  .about-me-content h2 {
+    font-size: 2.5vw;
+  }
+
+  .about-me-content p {
+    font-size: 1.5vw;
+  }
+
+  .project-info h3 {
+    font-size: 2vw;
+  }
+
+  .project-info .languages {
+    font-size: 1.2vw;
+  }
+}
+
+@media (max-width: 992px) {
+  .nav ul {
+    font-size: 1.8vw;
+  }
+
+  h1#typing-text {
+    font-size: 5vw;
+  }
+
+  .about-me-content h2 {
+    font-size: 3vw;
+  }
+
+  .about-me-content p {
+    font-size: 1.8vw;
+  }
+
+  .project-card {
+    height: 20vw;
+  }
+
+
+  .project-info h3 {
+    font-size: 2.5vw;
+  }
+
+  .project-info .languages {
+    font-size: 1.5vw;
+  }
+}
+
 @media (max-width: 768px) {
-    .project-overlay-content {
-        width: 95%;
-        margin: 5% auto;
-    }
+  .nav {
+    display: none;
+  }
 
-    .close-button {
-        font-size: 4vw;
-        top: 2vw;
-        right: 3vw;
-    }
+  h1#typing-text {
+    font-size: 6vw;
+  }
 
-    #overlay-title {
-        font-size: 3vw;
-    }
+  .about-me-container {
+    width: 80%;
+  }
 
-    #overlay-description {
-        font-size: 1.5vw;
-    }
+  .about-me-content {
+    padding: 3vw;
+  }
+
+  .about-me-content h2 {
+    font-size: 4vw;
+  }
+
+  .about-me-content p {
+    font-size: 2vw;
+  }
+
+  .social-icon {
+    width: 6vw;
+    height: 6vw;
+    margin-right: 2vw;
+  }
+
+  .projects-container {
+    max-width: 80%;
+  }
+
+  .project-card {
+    height: auto;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .project-card img {
+    width: 100%;
+    height: auto;
+    max-height: 40vw;
+    object-fit: cover;
+  }
+
+  .project-info {
+    width: 100%;
+    text-align: center;
+    padding: 1vw;
+  }
+
+  .project-info h3 {
+    font-size: 3vw;
+  }
+
+  .project-info .languages {
+    font-size: 1.8vw;
+  }
+
+  .close-button {
+    font-size: 4vw;
+    top: 2vw;
+    right: 3vw;
+  }
+
+  #overlay-title {
+    font-size: 3vw;
+  }
+
+  #overlay-description {
+    font-size: 2vw;
+  }
+  .star-icon{
+    width: 8vw;
+    height: 8vw;
+  }
+}
+
+@media (max-width: 600px) {
+  .nav {
+    display: none;
+  }
+
+  h1#typing-text {
+    font-size: 7vw;
+  }
+
+  .about-me-container {
+    width: 95%;
+  }
+
+  .about-me-content {
+    padding: 4vw;
+  }
+
+  .about-me-content h2 {
+    font-size: 5vw;
+  }
+
+  .about-me-content p {
+    font-size: 2.5vw;
+  }
+
+  .social-icon {
+    width: 4vw;
+    height: 4vw;
+    margin-right: 2.5vw;
+  }
+
+  .projects-container {
+    max-width: 95%;
+  }
+
+  .project-card {
+    height: auto;
+    flex-direction: column;
+    margin: 3vw 0;
+  }
+
+  .project-card img {
+    width: 100%;
+    height: auto;
+    max-height: 100vw;
+    object-fit: cover;
+    aspect-ratio: 1/1;
+  }
+
+  .project-info {
+    width: 100%;
+    text-align: center;
+    padding: 2vw;
+  }
+
+  .project-info h3 {
+    font-size: 4vw;
+  }
+
+  .project-info .languages {
+    font-size: 2.2vw;
+  }
+
+  .project-overlay-content {
+    width: 98%;
+    margin: 1% auto;
+    padding: 3vw;
+    padding-top: 5vw;
+  }
+
+  .close-button {
+    font-size: 5vw;
+    top: 3vw;
+    right: 4vw;
+  }
+
+  #overlay-title {
+    font-size: 4vw;
+  }
+
+  #overlay-description {
+    font-size: 2.5vw;
+  }
+  .star-icon{
+    width: 6vw;
+    height: 6vw;
+  }
 }
