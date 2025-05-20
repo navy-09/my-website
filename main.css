@@ -59,10 +59,10 @@ h1#typing-text:hover {
 
 .nav ul {
     position: relative;
-    font-family: 'quicksand-light';
+    font-family: 'quicksand-semibold';
     color: #f4f4f4;
     text-align: left;
-    font-size: 1.5vw;
+    font-size: 1.25vw;
     padding: 1%;
     padding-top: 0.5%;
     list-style-type: none;
@@ -320,16 +320,59 @@ p {
     font-size: 1.2vw;
 }
 
-.social-links a {
-    margin-right: 1vw;
-    color: #333;
-    font-size: 1.5vw;
-    text-decoration: none;
-    transition: color 0.3s ease-in-out;
+.social-links {
+    display: flex; /* Arrange icons horizontally */
+    align-items: center; /* Vertically align icons */
+    padding-top: 2vw; /* Adjust spacing from the element above */
+    justify-content: flex-start; /* Align items to the start and let spacing handle distribution */
 }
 
-.social-links a:hover {
-    color: #0B3948;
+.social-links {
+    display: flex;
+    align-items: center;
+    padding-top: 2vw;
+    justify-content: flex-start;
+}
+
+.social-icon {
+    width: 2.5vw;
+    height: 2.5vw;
+    border-radius: 50%;
+    background-color: white;
+    display: flex; /* Ensure flexbox is active */
+    justify-content: center; /* Center horizontally */
+    align-items: center; /* Center vertically */
+    margin-right: 0.8vw;
+    box-shadow: 2px 2px 4px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease-in-out;
+}
+
+.social-icon:hover {
+    transform: scale(1.1);
+}
+
+.social-icon img {
+    display: block;
+    width: 100%; /* Make the image try to fill the container */
+    height: 100%; /* Make the image try to fill the container */
+    object-fit: contain; /* Scale the image to fit within the container */
+    /* Remove any default margins or padding that might be pushing it out */
+    margin: 0;
+    padding: 0;
+}
+
+/* Media queries for smaller screens */
+@media (max-width: 768px) {
+    .social-icon {
+        width: 5vw;
+        height: 5vw;
+        margin-right: 1.5vw;
+    }
+
+    .social-icon img {
+        width: 80%; /* Adjust if needed for smaller screens */
+        height: 80%; /* Adjust if needed for smaller screens */
+    }
 }
 
 /* Styles for the projects section */
@@ -361,7 +404,7 @@ p {
 }
 
 .project-card img {
-    width: 30%; /* Adjust as needed for the image width */
+    width: 27%; /* Adjust as needed for the image width */
     height: 100%; /* Make the image fill the card's height */
     display: block;
     object-fit: fill; /* Maintain image aspect ratio and cover the area */
@@ -386,34 +429,6 @@ p {
     font-size: 1vw;
 }
 
-/* Media queries for smaller screens (adjust layout for better readability) */
-@media (max-width: 768px) {
-    .project-card {
-        flex-direction: column; /* Stack image and text vertically */
-        height: auto; /* Allow height to adjust based on content */
-        align-items: stretch; /* Make items take full width */
-    }
-
-    .project-card img {
-        width: 100%; /* Image takes full width */
-        height: auto; /* Adjust height automatically */
-    }
-
-    .project-info {
-        width: 100%; /* Text takes full width */
-        text-align: center; /* Center text on smaller screens */
-        padding: 1vw;
-    }
-
-    .project-info h3 {
-        font-size: 2vw;
-    }
-
-    .project-info .languages {
-        font-size: 1.5vw;
-    }
-}
-
 /* Styles for the project overlay */
 .project-overlay {
     display: none; /* Hidden by default */
@@ -427,13 +442,14 @@ p {
     justify-content: center; /* Center content horizontally */
     align-items: center; /* Center content vertically */
     overflow: auto; /* Enable scroll if content is too long */
+    padding-top: 5vh; /* Add padding at the top to create space */
 }
 
 .project-overlay-content {
     background-color: #fefefe;
-    margin: 15% auto; /* Adjust top margin as needed */
+    margin: 0 auto; /* Remove the default top margin */
     padding: 2vw;
-    padding-top: 4vw; /* Increased top padding */
+    padding-top: 4vw; /* Increased top padding for content */
     border: 1px solid #888;
     width: 70%; /* Reduced width */
     border-radius: 10px;
