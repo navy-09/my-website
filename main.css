@@ -36,7 +36,7 @@ body {
 
 h1#typing-text {
   position: relative;
-  font-family: 'tan-pearl';
+  font-family: 'quicksand-light';
   color: #f4f4f4;
   text-align: center;
   /* Adjusted font size to scale down responsively */
@@ -402,8 +402,8 @@ p {
 }
 
 .project-info {
-  padding: 1.5vw 2vw; /* Adjusted padding: top/bottom 1.5vw, left/right 2vw */
-  text-align: center; /* Center text */
+  padding: .5vw 2vw; /* Adjusted padding: top/bottom 1.5vw, left/right 2vw */
+  text-align: center; /* Changed to left align */
   width: 100%; /* Take full width of card */
   box-sizing: border-box; /* Include padding in the element's total width/height */
 }
@@ -413,12 +413,14 @@ p {
   color: #20222c;
   margin-bottom: 0.5vw;
   font-size: 1.5vw;
+  min-height: 3vw; /* Added min-height to ensure consistent vertical spacing */
 }
 
 .project-info .languages {
   font-family: 'glacial-indifference';
   color: #555;
   font-size: 1vw;
+  text-align: center; /* Changed to left align */
 }
 
 .project-overlay {
