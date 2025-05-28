@@ -1,1 +1,1 @@
-This project develops a basic ASP.NET Core MVC web application for Inland Marina Ltd to display company information and available boat slips to the public. It uses Entity Framework Code-First with a SQL Server database. Key features include a home page with marina details, a contact information page, and a dynamic listing of available slips filterable by dock. The application aims to automate initial leasing inquiries and is styled with Bootstrap and custom CSS.
+placeholder

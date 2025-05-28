@@ -1,1 +1,1 @@
-This booking management application is a JavaFX desktop application developed as a capstone project as a part of a team for an Object-Oriented Software Development class at SAIT. Built following the MVC architectural pattern, it uses Java for its core logic, FXML for defining the user interface, and JDBC to connect to and manage data in a SQL database. The application allows users to seamlessly display, add, edit, and delete booking records, view detailed booking information, and visualize booking statistics through integrated charts.
+placeholder
