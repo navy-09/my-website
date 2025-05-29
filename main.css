@@ -322,7 +322,6 @@ p {
   color: #0B3948;
   margin-bottom: 0.5vw;
   font-size: 2vw;
-  align: left;
 }
 
 .about-me-content p {
@@ -330,7 +329,7 @@ p {
   color: #333;
   line-height: 1.6;
   font-size: 1.2vw;
-  align: left;
+  text-align: justify;
 }
 
 .social-links {
