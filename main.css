@@ -521,6 +521,7 @@ p {
   line-height: 1.6;
   white-space: pre-line;
   text-align: justify;
+  padding-bottom: 0.5vw;
 }
 
 
