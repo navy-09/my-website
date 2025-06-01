@@ -1,1 +1,1 @@
-placeholder
+Virtufashion is a web application developed to explore augmented reality (AR) in fashion. The front-end features a user-friendly interface styled with custom CSS and a navigation bar. The homepage includes a dynamically generated greeting. The entire server-side logic, including routing and static asset delivery, is built using Node.js and the Express.js framework, with dynamic content rendered through EJS. This project demonstrates the ability to independently design and develop a complete web application.
