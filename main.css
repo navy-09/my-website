@@ -387,7 +387,6 @@ p {
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
-  text-align: justify;
 }
 
 .project-card:hover {
@@ -521,6 +520,7 @@ p {
   font-size: 1.2vw;
   line-height: 1.6;
   white-space: pre-line;
+  text-align: justify;
 }
 
 
