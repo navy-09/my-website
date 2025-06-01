@@ -387,6 +387,7 @@ p {
   overflow: hidden;
   transition: transform 0.3s ease-in-out;
   cursor: pointer;
+  text-align: justify;
 }
 
 .project-card:hover {
