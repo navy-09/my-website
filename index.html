@@ -6,13 +6,22 @@
     <body class="bg-animator">
         <div class="navbar-wrapper">
             <div class="navbar">
-                    <ul>
-                        <li><a href="index.html">Home</a></li>
+                <div class="menu-toggle" id="menuToggle">☰</div>
+                    <ul id="navLinks">
+                        <li><a href="index.html" class="active">Home</a></li>
                         <li><a href="projects.html">Projects</a></li>
                         <li><a href="about.html">About</a></li>
                         <li><a href="contect.html">Contact</a></li>
                     </ul>
             </div>
         </div>
+        <script>
+            const toggle = document.getElementById("menuToggle");
+            const nav = document.getElementById("navLinks");
+
+            toggle.addEventListener("click", () => {
+                nav.classList.toggle("active");
+            });
+        </script>
     </body>
 </html>
