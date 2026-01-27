@@ -83,7 +83,7 @@ html, body {
 .menu-toggle {
     display: none;
     font-size: 1.5rem;
-    padding: .05rem 1.5rem;
+    padding: .05rem 1.25rem;
     cursor: pointer;
     color:#6F929D;
     font-family: montserrat;
