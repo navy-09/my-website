@@ -84,14 +84,9 @@ html, body {
     color: #6F929D;
     font-family: montserrat;
     border-radius: 50px;  
-    background: rgba(255, 255, 255, 0.15); 
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    backdrop-filter: blur(6px);
-    box-shadow: 0 4px 10px rgba(0,0,0,0.05);
 }
 
 .menu-toggle:hover {
-    background: rgba(255, 255, 255, 0.4);
     color: #417283;
 }
 
@@ -142,7 +137,7 @@ html, body {
 
     .navbar ul li {
         width: 100%;
-        padding: 0.5rem 1rem;
+        padding: 0.5rem 1.25rem;
         font-size: 1.2rem;
     }
 }
