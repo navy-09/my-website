@@ -79,7 +79,7 @@ html, body {
 .menu-toggle {
     display: none;
     font-size: 1.75rem;
-    padding: 0.25rem 1rem;
+    padding: 0.25rem 0.5rem;
     cursor: pointer;
     color:#6F929D;
     font-family: montserrat;
@@ -98,7 +98,7 @@ html, body {
     }
     .navbar {
         width: auto;
-        padding: 0.25rem 0.5rem;
+        padding: 0.25rem 1.25rem;
     }
 
     .navbar ul {
@@ -127,7 +127,7 @@ html, body {
 
     .navbar ul li {
         width: 100%;
-        padding: 0.5rem 1;
+        padding: 0.5rem 1rem;
         font-size: 1.2rem;
     }
 }
