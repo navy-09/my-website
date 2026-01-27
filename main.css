@@ -79,7 +79,7 @@ html, body {
 .menu-toggle {
     display: none;
     font-size: 1.75rem;
-    padding: 0.25rem 1.5rem; 
+    padding: 0.1rem 1rem; 
     cursor: pointer;
     color: #6F929D;
     font-family: montserrat;
@@ -135,14 +135,13 @@ html, body {
         padding-left: 1rem;
         z-index: 1002;
 
-        background: rgba(226, 238, 243, 1);
+        background: rgba(216, 231, 236, 1);
         border-radius: 25px;
         border: 1px solid rgba(255, 255, 255, 0.1);
         box-shadow: 0 8px 20px 0 rgba(92, 93, 102, 0.3);
         backdrop-filter: blur(1px);
         -webkit-backdrop-filter: blur(1px);
 
-        /* animation */
         transform: scaleY(0);
         transform-origin: top;
         opacity: 0;
