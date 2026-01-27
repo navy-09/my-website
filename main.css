@@ -79,10 +79,19 @@ html, body {
 .menu-toggle {
     display: none;
     font-size: 1.75rem;
-    padding: 0.25rem 0.5rem;
+    padding: 0.25rem 1rem; 
     cursor: pointer;
-    color:#6F929D;
+    color: #6F929D;
     font-family: montserrat;
+    border-radius: 999px;  
+    background: rgba(255, 255, 255, 0.25); 
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(3px);
+}
+
+.menu-toggle:hover {
+    background: rgba(255, 255, 255, 0.4);
+    color: #417283;
 }
 
 /* reponsive navbar for smaller screens */
@@ -108,21 +117,24 @@ html, body {
         position: absolute;
         top: 100%;
         left: 0;
-        width: 200px; 
+        width: 200px;
         flex-direction: column;
         gap: 0;
         padding: 0.5rem 0;
         background: rgba(255, 255, 255, 0.35);
         border-radius: 20px;
         backdrop-filter: blur(6px);
-        max-height: 0;
+
+        /* animation */
+        transform: scaleY(0);
+        transform-origin: top;
         opacity: 0;
-        transition: all 0.3s ease;
         pointer-events: none;
+        transition: all 0.3s ease;
     }
 
     .navbar ul.active {
-        max-height: 500px;
+        transform: scaleY(1);
         opacity: 1;
         pointer-events: auto;
     }
