@@ -33,6 +33,7 @@ html, body {
     left: 0;
     position: fixed;
     box-sizing: border-box;
+    z-index: 99;
 }
 
 
