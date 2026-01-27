@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="main.css">
+    </head>
+    <body class="bg-animator">
+        <div class="navbar-wrapper">
+            <div class="navbar">
+                <div class="menu-toggle" id="menuToggle">☰</div>
+                    <ul id="navLinks">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="projects.html">Projects</a></li>
+                        <li><a href="about.html" class="active">About</a></li>
+                        <li><a href="contact.html">Contact</a></li>
+                    </ul>
+            </div>
+        </div>
+        <script>
+            const toggle = document.getElementById("menuToggle");
+            const nav = document.getElementById("navLinks");
+
+            toggle.addEventListener("click", (e) => { //listener for toggle button click
+                e.stopPropagation();
+                nav.classList.toggle("active"); //marks active
+            });
+
+            document.addEventListener("click", (e) => { //listener for click on entire document
+                if (!nav.contains(e.target) && !toggle.contains(e.target)) {  //check to make sure click was not on the menu icon or the navbar
+                    nav.classList.remove("active"); //removes active marker
+                }
+            }); 
+
+            nav.querySelectorAll("a").forEach(link => { //each link removes active marker
+                link.addEventListener("click", () => {
+                    nav.classList.remove("active");
+                });
+            });
+        </script>
+    </body>
+</html>
