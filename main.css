@@ -112,7 +112,7 @@ html, body {
 
         flex-direction: column;
         align-items: flex-start;
-        padding: 1rem;
+        padding: .75rem;
 
         background: rgba(255, 255, 255, 0.35);
         border-radius: 20px;
