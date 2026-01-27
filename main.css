@@ -25,7 +25,7 @@ html, body {
 }
 
 
-/* Nav Bar */
+/* navbar */
 .navbar-wrapper {
     width: 100%;
     padding: .5rem;
@@ -90,7 +90,7 @@ html, body {
 }
 
 /* reponsive navbar for phones and tablets */
-@media (max-width: 768px) {
+@media (max-width: 950px) {
     
     .navbar-wrapper {
         display: flex;
