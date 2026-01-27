@@ -126,15 +126,21 @@ html, body {
 
     .navbar ul {
         position: absolute;
-        top: 100%;
+        top: 0;
         left: 0;
-        width: 200px;
+        width: auto;
         flex-direction: column;
         gap: 0;
         padding: 0.5rem 0;
-        background: rgba(255, 255, 255, 0.15);
-        border-radius: 20px;
-        backdrop-filter: blur(6px);
+        padding-left: 1rem;
+        z-index: 1002;
+
+        background: rgba(226, 238, 243, 1);
+        border-radius: 25px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 20px 0 rgba(92, 93, 102, 0.3);
+        backdrop-filter: blur(1px);
+        -webkit-backdrop-filter: blur(1px);
 
         /* animation */
         transform: scaleY(0);
