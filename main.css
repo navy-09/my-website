@@ -79,7 +79,7 @@ html, body {
 .menu-toggle {
     display: none;
     font-size: 1.75rem;
-    padding: 0.25rem 1rem; 
+    padding: 0.25rem 1.5rem; 
     cursor: pointer;
     color: #6F929D;
     font-family: montserrat;
@@ -96,6 +96,16 @@ html, body {
     .menu-toggle {
         display: block;
         z-index: 1001;
+        background: rgba(255, 255, 255, 0.25);
+        border-radius: 50px;
+        border: 1px solid rgba(255, 255, 255, 0.1);
+        box-shadow: 0 8px 20px 0 rgba(92, 93, 102, 0.3);
+        backdrop-filter: blur(1px);
+        -webkit-backdrop-filter: blur(1px);
+
+        position: fixed;
+        top: 0.5rem;
+        left: 0.5rem;
     }
 
     .navbar-wrapper {
@@ -107,6 +117,11 @@ html, body {
         padding: 0.1rem 1rem;
         overflow: visible;
         position: relative;
+
+        background: none;
+        box-shadow: none;
+        border: none;
+        backdrop-filter: none;
     }
 
     .navbar ul {
